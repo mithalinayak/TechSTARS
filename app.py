@@ -37,6 +37,7 @@ class SignUpPage(GridLayout):
         self.add_widget(self.next_button)
 
     def next_page(self, instance):
+        app = App.get_running_app()
         if self.checkbox1.active:
             username = self.username.text
             password = self.password.text

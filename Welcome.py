@@ -5,6 +5,10 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.graphics import Color, Rectangle
 
+# Importing Signup and Login interfaces
+from Signup import SignupInterface
+from Login import LoginInterface
+
 class WelcomePage(App):
     def build(self):
         # Create the main layout
@@ -25,25 +29,27 @@ class WelcomePage(App):
         label = Label(text="Stay Safe at every click!", font_size='24sp')
         layout.add_widget(label)
 
- # Add signup button with style
-        signup_button = Button(text="Sign Up", size_hint=(1, 0.3), background_normal='', background_color=(0, 0.7, 0.3, 1), color=(1, 1, 1, 1), font_size='20sp', pos_hint={'center_x': 0.5, 'y': 0.5})
-        signup_button.bind(on_press=self.sign_up)
+        # Add signup button
+        signup_button = Button(text="Sign Up", size_hint=(1, 0.1), background_normal='', background_color=(0, 0.7, 0.3, 1), color=(1, 1, 1, 1), font_size='20sp', padding=(0, 10))
+        signup_button.bind(on_press=self.goto_signup)
         layout.add_widget(signup_button)
 
-        # Add login button with style
-        login_button = Button(text="Login", size_hint=(1, 0.1), background_normal='', background_color=(0, 0.5, 0.9, 1), color=(1, 1, 1, 1), font_size='20sp', pos_hint={'center_x': 0.5, 'y': 0.5})
-        login_button.bind(on_press=self.login)
+        # Add login button
+        login_button = Button(text="Login", size_hint=(1, 0.1), background_normal='', background_color=(0, 0.5, 0.9, 1), color=(1, 1, 1, 1), font_size='20sp', padding=(0, 10))
+        login_button.bind(on_press=self.goto_login)
         layout.add_widget(login_button)
 
         return layout
 
-    def sign_up(self, instance):
-        # Code to handle signup button press
-        print("Sign Up button pressed")
+    def goto_signup(self, instance):
+        # Switch to Signup interface
+        self.root.clear_widgets()
+        self.root.add_widget(SignupInterface())
 
-    def login(self, instance):
-        # Code to handle login button press
-        print("Login button pressed")
+    def goto_login(self, instance):
+        # Switch to Login interface
+        self.root.clear_widgets()
+        self.root.add_widget(LoginInterface())
 
 if __name__ == '__main__':
     WelcomePage().run()

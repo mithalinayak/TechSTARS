@@ -26,13 +26,12 @@ class WelcomePage(App):
         layout.add_widget(label)
 
  # Add signup button with style
-          # Add signup button with style and padding
-        signup_button = Button(text="Sign Up", size_hint=(1, 0.1), background_normal='', background_color=(0, 0.7, 0.3, 1), color=(1, 1, 1, 1), font_size='20sp', padding=(0, 10))
+        signup_button = Button(text="Sign Up", size_hint=(1, 0.3), background_normal='', background_color=(0, 0.7, 0.3, 1), color=(1, 1, 1, 1), font_size='20sp', pos_hint={'center_x': 0.5, 'y': 0.5})
         signup_button.bind(on_press=self.sign_up)
         layout.add_widget(signup_button)
 
-        # Add login button with style and padding
-        login_button = Button(text="Login", size_hint=(1, 0.1), background_normal='', background_color=(0, 0.5, 0.9, 1), color=(1, 1, 1, 1), font_size='20sp', padding=(0, 10))
+        # Add login button with style
+        login_button = Button(text="Login", size_hint=(1, 0.1), background_normal='', background_color=(0, 0.5, 0.9, 1), color=(1, 1, 1, 1), font_size='20sp', pos_hint={'center_x': 0.5, 'y': 0.5})
         login_button.bind(on_press=self.login)
         layout.add_widget(login_button)
 

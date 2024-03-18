@@ -1,0 +1,36 @@
+ScreenManager:
+    SignupScreen:
+    
+<SignupScreen>:
+    name: "signup"
+    
+    MDTextField:
+        hint_text: "Username"
+        pos_hint: {"center_x": 0.5, "center_y": 0.7}
+        size_hint_x: None
+        width: "200dp"
+    
+    MDTextField:
+        hint_text: "Email"
+        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+        size_hint_x: None
+        width: "200dp"
+    
+    MDTextField:
+        hint_text: "Password"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        size_hint_x: None
+        width: "200dp"
+        password: True
+    
+    MDTextField:
+        hint_text: "Confirm Password"
+        pos_hint: {"center_x": 0.5, "center_y": 0.4}
+        size_hint_x: None
+        width: "200dp"
+        password: True
+        
+    MDFlatButton:
+        text: "Sign Up"
+        pos_hint: {"center_x": 0.5, "center_y": 0.3}
+        on_press: app.root.current = "welcome"  # Change to welcome screen after signing up
